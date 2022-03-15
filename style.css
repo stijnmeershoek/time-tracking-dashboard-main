@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+
+  --blue: hsl(246, 80%, 60%);
+  --work: hsl(15, 100%, 70%);
+  --play: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --self-care: hsl(43, 84%, 65%);
+
+  /* Neutral */
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+
+  /* Text */
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  color: var(--white);
+}
+
+.card-background {
+  position: absolute;
+  inset: -10px 0 0 0;
+  z-index: -1;
+}
+
+.card[data-card-type] .card-background::after {
+  position: absolute;
+  right: 20px;
+}
+
+.card[data-card-type="work"] .card-title::after {
+  content: "Work";
+}
+.card[data-card-type="play"] .card-title::after {
+  content: "Play";
+}
+.card[data-card-type="study"] .card-title::after {
+  content: "Study";
+}
+.card[data-card-type="exercise"] .card-title::after {
+  content: "Exercise";
+}
+.card[data-card-type="social"] .card-title::after {
+  content: "Social";
+}
+.card[data-card-type="self-care"] .card-title::after {
+  content: "Self Care";
+}
+.card[data-card-type="work"] .card-background {
+  background-color: var(--work);
+}
+.card[data-card-type="work"] .card-background::after {
+  content: url(./images//icon-work.svg);
+}
+.card[data-card-type="play"] .card-background {
+  background-color: var(--play);
+}
+.card[data-card-type="play"] .card-background::after {
+  content: url(./images/icon-play.svg);
+}
+.card[data-card-type="study"] .card-background {
+  background-color: var(--study);
+}
+.card[data-card-type="study"] .card-background::after {
+  content: url(./images/icon-study.svg);
+}
+.card[data-card-type="exercise"] .card-background {
+  background-color: var(--exercise);
+}
+.card[data-card-type="exercise"] .card-background::after {
+  content: url(./images/icon-exercise.svg);
+}
+.card[data-card-type="social"] .card-background {
+  background-color: var(--social);
+}
+.card[data-card-type="social"] .card-background::after {
+  content: url(./images/icon-social.svg);
+}
+.card[data-card-type="self-care"] .card-background {
+  background-color: var(--self-care);
+}
+.card[data-card-type="self-care"] .card-background::after {
+  content: url(./images/icon-self-care.svg);
+}
+
+.card-background svg {
+  float: right;
+  margin-right: 25px;
+}
+
+.card-content {
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+  height: calc(100% - 49px);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content h1 {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.card-content .previous-period {
+  color: var(--pale-blue);
+  margin-top: 10px;
+}
