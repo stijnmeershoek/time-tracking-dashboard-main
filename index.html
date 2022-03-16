@@ -20,25 +20,25 @@
 
 <body>
   <main class="dashboard-grid">
-    <div class="menu">
+    <section class="menu">
       <header>
         <img src="./images/image-jeremy.png" alt="User Picture">
         <div>
           <span>Report for</span>
-          <h1>Jeremy<br>Robson</h1>
+          <h1>Jeremy<br> Robson</h1>
         </div>
       </header>
       <nav>
-        <button onclick="changeCategory('daily')">Daily</button>
-        <button onclick="changeCategory('weekly')">Weekly</button>
-        <button onclick="changeCategory('monthly')">Monthly</button>
+        <button onclick="changeCategory('daily')" class="daily active">Daily</button>
+        <button onclick="changeCategory('weekly')" class="weekly">Weekly</button>
+        <button onclick="changeCategory('monthly')" class="monthly">Monthly</button>
       </nav>
-    </div>
-    <div class="category">
+    </section>
+    <section class="category">
       <div class="time-card-grid" data-grid="daily"></div>
       <div class="time-card-grid" data-grid="weekly"></div>
       <div class="time-card-grid" data-grid="monthly"></div>
-    </div>
+    </section>
   </main>
 
   <!-- Card Template for Javascript -->
